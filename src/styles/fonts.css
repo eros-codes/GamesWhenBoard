@@ -1,0 +1,19 @@
+/* fonts.css — the site's two fonts, served with the site (not Google Fonts: not always reachable from Iran,
+   and a site that works offline must not depend on another host). Variable fonts only: one file covers every
+   weight, and every current browser supports them. Licenses: ../fonts/OFL-*.txt (SIL Open Font License). */
+
+@font-face {
+	font-family: 'Lora';
+	src: url('../fonts/Lora-VariableFont_wght.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Baloo Bhaijaan 2';
+	src: url('../fonts/BalooBhaijaan2-VariableFont_wght.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}

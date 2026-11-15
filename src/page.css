@@ -1,0 +1,15 @@
+/* Every stylesheet of this page, in cascade order. One file per page, so the production build keeps
+   exactly this order (separately imported files shared between pages were split into common chunks
+   and could load in a different order). */
+@import './styles/site-base.css';
+@import './styles/footer.css';
+@import './games/style/hub.css';
+@import './games/style/kit.css';
+@import './games/style/spy.css';
+@import './games/style/words.css';
+@import './games/style/board.css';
+@import './games/style/mafia.css';
+@import './games/style/ludo.css';
+@import './games/style/chess.css';
+@import './games/style/backgammon.css';
+@import './styles/motion.css';

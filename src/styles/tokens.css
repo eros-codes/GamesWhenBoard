@@ -1,0 +1,60 @@
+/* tokens.css — Board's colours, in one place: «game night», a dark table where the boards, cards and players'
+   colours stand out. Every colour of the site comes from here (the games' own pieces too: their board
+   colours are below). Change a value here and the whole site follows. */
+
+:root {
+	color-scheme: dark;
+
+	/* surfaces, from the table up */
+	--bg: #14161f; /* the page, and the table of a game being played */
+	--surface: #1f2330; /* cards, panels, setup screens */
+	--surface-2: #282d3d; /* fields, chips, tiles on a surface */
+	--surface-3: #333a4d; /* hover / pressed */
+	--stage: radial-gradient(120% 80% at 50% 0%, #252a3a 0%, #181b26 48%, #0f1118 100%); /* cards and clocks in play */
+
+	/* text */
+	--ink: #ece8e1;
+	--ink-soft: #a9a7ae;
+	--ink-faint: #7d808c;
+
+	/* lines */
+	--line: rgba(236, 232, 225, 0.12);
+	--line-strong: rgba(236, 232, 225, 0.24);
+	--tint: rgba(236, 232, 225, 0.06); /* a faint fill on a surface */
+
+	/* accents */
+	--accent: #f2b544; /* amber: the main action, what is chosen */
+	--accent-hover: #f6c463;
+	--on-accent: #1b1405; /* text on amber */
+	--accent-soft: rgba(242, 181, 68, 0.14);
+	--teal: #3fb6a8;
+	--on-teal: #0b1d1a;
+	--teal-soft: rgba(63, 182, 168, 0.15);
+
+	/* outcomes */
+	--good: #4cc38a;
+	--good-soft: rgba(76, 195, 138, 0.15);
+	--pass: #f09a4a;
+	--bad: #e5604d;
+	--bad-soft: rgba(229, 96, 77, 0.15);
+
+	--focus: #8fc7ff; /* keyboard focus ring */
+	--shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+	--shadow-lift: 0 14px 34px rgba(0, 0, 0, 0.45);
+	--scrim: rgba(5, 6, 10, 0.62);
+
+	/* players: clearly different from each other and from the table (first = amber, then teal, …) */
+	--player-1: #f2b544;
+	--player-2: #3fb6a8;
+	--player-3: #e5604d;
+	--player-4: #9b8cf2;
+	--player-5: #5fa8f0;
+	--player-6: #e97fb5;
+	--player-7: #8bc34a;
+	--player-8: #f08d4a;
+
+	--font-chrome: 'Lora', 'Baloo Bhaijaan 2', Tahoma, serif;
+	--ease-std: cubic-bezier(0.4, 0, 0.2, 1);
+	--ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+	--ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
