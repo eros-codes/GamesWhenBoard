@@ -69,7 +69,7 @@ src/main.tsx            starts the page and the service worker
 src/GamesPage.tsx       the list of games and the game being played (the address gets #chess, #spy, …)
 src/games/              the games, unchanged from Avel: one folder per game, kit/ for what they share
 src/games/data.ts       reads games.json
-src/styles/             the site's footer, colours, fonts and motion (no header)
+src/styles/             the site's colours, fonts and motion (no header or footer)
 src/fonts/              Lora and Baloo Bhaijaan 2 (variable fonts, SIL Open Font License)
 src/sw-template.js      the service worker (the build fills in its file list)
 public/data/games.json  the words

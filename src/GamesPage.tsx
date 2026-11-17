@@ -214,15 +214,6 @@ export function GamesPage() {
 					)}
 				</main>
 			</div>
-			<footer className="menu-footer">
-				<div>
-					<div className="menu-footer-top">
-						<h6 className="menu-footer-subtitle">games for the table</h6>
-						<h4 className="menu-footer-title">Board,</h4>
-					</div>
-				</div>
-				<h6 className="menu-footer-credit">Made with love 🤍</h6>
-			</footer>
 		</>
 	);
 }

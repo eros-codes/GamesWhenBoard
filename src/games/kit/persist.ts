@@ -3,10 +3,9 @@ import { safeStorage } from '../../shared/storage';
 import type { GameKey } from '../data';
 
 // Every game keeps its whole state on the phone while it is played: a reload, a call or a trip to another
-// app does not lose the game. A save older than MAX_AGE is dropped (that table has long gone home).
+// app does not lose the game. A save never expires: it stays until the game ends, is started over or is cleared.
 
 const PREFIX = 'board.save.';
-const MAX_AGE_MS = 6 * 60 * 60 * 1000;
 
 interface Saved<T> {
 	/** Shape version of the game's state: a new version ignores old saves. */
@@ -27,7 +26,7 @@ export interface SaveOptions<T> {
 function read<T>(game: GameKey, version: number, isValid?: (state: unknown) => boolean): Saved<T> | null {
 	try {
 		const saved = JSON.parse(safeStorage.get(PREFIX + game) || 'null') as Saved<T> | null;
-		if (!saved || saved.v !== version || Date.now() - saved.at > MAX_AGE_MS) return null;
+		if (!saved || saved.v !== version) return null;
 		// A save from an older build with the same version number (or edited by hand) would crash the game on
 		// its first render and leave a blank page every time it is opened: start the game fresh instead.
 		if (isValid && !isValid(saved.state)) {
@@ -44,7 +43,7 @@ function read<T>(game: GameKey, version: number, isValid?: (state: unknown) => b
 export function hasLiveSave(game: GameKey): boolean {
 	try {
 		const saved = JSON.parse(safeStorage.get(PREFIX + game) || 'null') as Saved<unknown> | null;
-		return Boolean(saved?.live && Date.now() - saved.at <= MAX_AGE_MS);
+		return Boolean(saved?.live);
 	} catch {
 		return false;
 	}

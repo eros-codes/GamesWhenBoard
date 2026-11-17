@@ -357,3 +357,47 @@
 	grid-template-columns: 1fr 1.4fr;
 	gap: 0.5rem;
 }
+
+/* ─── the opening throw: one die each ─── */
+
+.bg-opening {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.bg-roll-one {
+	padding-inline-end: 0.8rem;
+}
+
+.bg-opening-die {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	min-height: 2.5rem;
+	padding: 0.3rem 0.8rem 0.3rem 0.45rem;
+	border-radius: 999px;
+	background: rgba(0, 0, 0, 0.35);
+	color: #fff;
+	font-size: 0.92rem;
+	font-weight: 800;
+}
+
+.bg-opening-die .bg-die {
+	width: 1.9rem;
+	height: 1.9rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.bg-opening-die .bg-die {
+		animation: bg-roll-in 0.35s var(--ease-out) both;
+	}
+}
+
+.bg-opening-die.tie {
+	box-shadow: 0 0 0 2px var(--pass);
+}
+
+.bg-opening-die.high {
+	box-shadow: 0 0 0 2px var(--accent);
+}
